@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Kokoa Talk</title>
+    <title>Welcome to Kokoa Clone</title>
 </head>
 <body>
     <div id="status-bar">
@@ -17,6 +17,22 @@
             <i class="fa-solid fa-battery-full"></i>
             <i class="fa-solid fa-bolt"></i>
     </div>
+
+    <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+        <p class="welcome-header__text">If you Have a Kokoa Account, log in with your email or phone number.</p>
+    </header>
+
+    <form id="login-form">
+        <input type="text" placeholder="Email or phone number" />
+        <input type="password" placeholder="Password" />
+        <input type="submit" value="Log In" />
+        <a href="#">Find Kokoa Account or Password</a>
+    </form>
+
+
+
+
     <script src="https://kit.fontawesome.com/5882a4dbdb.js" crossorigin="anonymous"></script>
 </body>
 </html>
@@ -25,11 +41,10 @@
 
 
 
-
-<!--   #6.4 Sign Up Screen part Two 
-
+<!--
 
 -->
+
 
 
 
@@ -69,4 +84,11 @@ Docs 제목 먼저 적어주고,
 - FontAwesome(무료, 유료 다 있는데 정말 좋아한다고 하신다. )
 
 <i>는 아이콘의 줄임말이다
+-->
+
+
+<!--   #6.4 Sign Up Screen part Two 
+header가 엄청 많을거라 css에서 수정하기 쉽도록 class를 지정해준다.  class="welcome-header"
+form, 링크 등 요소들이 있을 경우 그게 얼마나 많은지에 따라서 이름 짓는것에 더 신경써야 한다. 미리 어떤걸 만들건지 생각해놔야 좋음
+특히 링크들을 많아서, 그 하나하나 id, class를 지정해주기 힘들다. 그래서 form 안에 집어넣었음.
 -->
