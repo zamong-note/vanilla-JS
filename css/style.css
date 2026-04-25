@@ -2,81 +2,19 @@
 /* 구글 폰트 */
 @import "reset.css";
 /* css파일에 import 하는 이유는 html에 링크를 계속 추가하는게 비효율적이기 때문 */
-@import "status-bar.css";
+@import "components/status-bar.css";
 /* 6.6 css파일 분리, style.css 파일은 다른 css 파일을 추가하는 파일로 쓰기로*/
+/* 6.9 경로변경 */
 
 @import "variables.css";
 /* 6.7 추가 */
 
+@import "screens/login.css";
+/* 6.9 추가 */
 
 
 body {
     font-family: "Open Sans", sans-serif;
     }
 
-
-.welcome-header {
-    margin: 90px 0px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 600;
-}
-
-.welcome-header__title {
-    margin-bottom: 20px;
-    font-size: 25px;
-}
-
-.welcome-header__text {
-    width: 60%;
-    opacity: 0.7;
-}
-
-/* 여러 개의 input들을 가지게 될거라 class 말고 id로 */
-#login-form {   
-    display: flex;
-    flex-direction: column;
-    margin: 0px 30px;
-}
-
-#login-form input {
-    border: none;
-    padding: 15px 0px;
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-
-/* not : 적용되지 않아야 할 것 */
-#login-form input:not([type="submit"]) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    transition: border-color 0.3s ease-in-out;
-    /* transition : 뭔가 살짝 색깔변화 지연? */
-}
-
-#login-form input::placeholder {
-    color:rgba(0, 0, 0, 0.4);
-}
-
-/* 클릭했을 때 조금 더 border-bottom 변화 */
-#login-form input:focus {
-    border-color: var(--yellow);
-}
-
-
-#login-form input[type="submit"] {
-    background-color: var(--yellow);
-    cursor: pointer;
-    padding: 20px 0px;
-    border-radius: 5px;
-}
-
-
-#login-form a {
-    text-align: center;
-    text-decoration: none;
-    color:inherit;  /* login-form의 default color인 black를 받아옴*/
-    font-size: 13px;
-}
 
