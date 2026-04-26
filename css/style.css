@@ -10,6 +10,8 @@
 /* 6.9 경로변경 */
 @import "components/nav-bar.css";
 /*6.10 추가*/
+@import "components/screen-header.css";
+/* #6.12 추가*/
 
 
 @import "screens/login.css";
