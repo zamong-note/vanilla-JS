@@ -16,11 +16,14 @@
 
 @import "screens/login.css";
 /* 6.9 추가 */
+@import "screens/firends.css";
+/* 6.15 추가 */
 
 
 /* CSS에 import되는 순서도 중요하다. 먼저 적용됨 */
 
 body {
+    color: #2e363e;
     font-family: "Open Sans", sans-serif;
     height: 1000vh;
     }
