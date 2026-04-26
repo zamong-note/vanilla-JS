@@ -12,6 +12,8 @@
 /*6.10 추가*/
 @import "components/screen-header.css";
 /* #6.12 추가*/
+@import "components/user-component.css";
+/* #6.16 추가 */
 
 
 @import "screens/login.css";
