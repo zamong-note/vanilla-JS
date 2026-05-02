@@ -1,22 +1,21 @@
-const h1 = document.querySelector("div.title:first-child h1");
+/* 
+const loginForm = document.querySelector(".login-form"); /// 또는 getElementById("login-form")
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
+*/
 
-function handleTitleClick() {
-    h1.classList.toggle("clicked");
+const loginInput = document.querySelector(".login-form input");
+const loginButton = document.querySelector(".login-form button");
+
+function onLoginBtnClick() {
+    console.log("hello", loginInput.value);
 }
 
 
-h1.addEventListener("click", handleTitleClick);  
+loginButton.addEventListener("click", onLoginBtnClick)
 
 
 
-/* line 4 한 줄은 아래 코드와 같다
 
-function handleTitleClick() {
-    const clickedClass = "clicked"
-    if (h1.classList.contains(clickedClass)) {  /// html 클래스에 포함되어있는지 확인
-        h1.classList.remove(clickedClass);
-    } else {
-        h1.classList.add(clickedClass);
-    } 
-}
- */
+
+
