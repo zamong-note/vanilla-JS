@@ -1,15 +1,11 @@
+const loginForm = document.querySelector(".login-form");
 const loginInput = document.querySelector(".login-form input");
-const loginButton = document.querySelector(".login-form button");
 
-function onLoginBtnClick() {
-    const username = loginInput.value;
-/*   if(username === ""){
-        alert("이름을 입력하세요");
-    } else if(username.length > 15) {    /// string 다음 lenght만 하면 되도록 js에서 사전 구현
-        alert("너무 길어요")
-    }*/
+function onLoginSubmit(tomato) {
+    tomato.preventDefault();
+    console.log(tomato);
+    console.log(loginInput.value);
 }
 
 
-
-loginButton.addEventListener("click", onLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
