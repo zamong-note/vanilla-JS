@@ -2,11 +2,13 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");  
 const toDoList = document.getElementById("todo-list");
 
-const toDos = [];   // 배열을 하나 만들어주기. newTodo가 만들어질때마다 array에 push할것
+const TODOS_KEY = "todos"
+
+const toDos = [];  
 
 
-function saveToDos() {
-    localStorage.setItem("todos", JSON.stringify(toDos));   // 배열처럼 보이게 출력할 수 있다
+function savedToDos() {
+    localStorage.setItem("TODOS_KEY", JSON.stringify(toDos));   
 }
 
 
@@ -31,14 +33,38 @@ function handleToDoSubmit() {
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";    
-    toDos.push(newTodo);    // newTodo가 만들어질때마다 array에 push하기
+    toDos.push(newTodo);    
     paintToDo(newTodo);     
-    saveToDos();        // 저장하는 함수 호출하기
+    savedToDos();        
 }
 
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
+const savedToDos = localStorage.getItem(TODOS_KEY);
 
 
-// 아직 새로고침하면 다 사라진다
+if(savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    parsedToDos.forEach((item)=>console.log("this is the turn of ", item));  // 
+}
+
+
+
+
+
+/* => 배우기 전 작성한 코드 (arrow function이라고 함)
+
+toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+function sayHello(item) {
+    console.log("this is the turn of ", item);
+}
+
+
+if(savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    parsedToDos.forEach(sayHello);
+}  */
