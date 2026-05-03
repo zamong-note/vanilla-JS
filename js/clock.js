@@ -8,5 +8,5 @@ function getClock() {
   clock.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
-getClock();     // 한번 실행 후에 매 초마다 실행
+getClock();
 setInterval(getClock, 1000);
