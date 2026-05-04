@@ -19,9 +19,10 @@ function deleteTodo(event){
 
 function paintToDo(newTodo){
     const li = document.createElement("li");   
+    li.id = newTodo.id;
     const span = document.createElement("span");   
     const button = document.createElement("button");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     button.innerText = "X";
     button.addEventListener("click", deleteTodo);
     li.appendChild(span);           
@@ -33,8 +34,12 @@ function handleToDoSubmit() {
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";    
-    toDos.push(newTodo);    
-    paintToDo(newTodo);     
+    const newTodoObj = {
+        text:newTodo,
+        id: Date.now(),
+    };
+    toDos.push(newTodoObj);     // 단순 text 말고 object로 저장하기
+    paintToDo(newTodoObj);     
     saveToDos();        
 }
 
@@ -52,20 +57,3 @@ if(savedToDos !== null) {
 
 
 
-
-
-/* => 배우기 전 작성한 코드 (arrow function이라고 함)
-
-toDoForm.addEventListener("submit", handleToDoSubmit);
-
-const savedToDos = localStorage.getItem(TODOS_KEY);
-
-function sayHello(item) {
-    console.log("this is the turn of ", item);
-}
-
-
-if(savedToDos !== null) {
-    const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach(sayHello);
-}  */
