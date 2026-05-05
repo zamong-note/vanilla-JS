@@ -14,7 +14,10 @@ function saveToDos() {
 
 function deleteTodo(event){
     const li = event.target.parentElement;
+    console.log(typeof li.id);   // string으로 나오는걸 볼 수 있다. 
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));  // 우리가 클릭한 li.id와 다른 toDo는 남겨두기. 근데 타입 변화가 필요함
     li.remove();
+    saveToDos();       
 }
 
 function paintToDo(newTodo){
@@ -38,7 +41,7 @@ function handleToDoSubmit() {
         text:newTodo,
         id: Date.now(),
     };
-    toDos.push(newTodoObj);     // 단순 text 말고 object로 저장하기
+    toDos.push(newTodoObj);     
     paintToDo(newTodoObj);     
     saveToDos();        
 }
@@ -52,7 +55,7 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 if(savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
     toDos = parsedToDos;
-    parsedToDos.forEach(paintToDo);  // 
+    parsedToDos.forEach(paintToDo);  
 }
 
 
