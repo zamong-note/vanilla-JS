@@ -1,3 +1,38 @@
 .hidden {
   display: none;
 }
+
+body {
+  background-color: beige;
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#quote {
+  margin-top: 25px; 
+}
+
+#weather {
+  margin-top: 25px;
+}
+
+#todo-form { 
+  margin-top: 50px;
+}
+
+img {
+  width: 1000px;
+  height: 500px;
+  border-radius: 100px;
+  object-fit: cover;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+#todo-input {
+  width: 250px;
+}
+#todo-input::placeholder {
+  text-align: center;
+}
